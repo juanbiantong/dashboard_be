@@ -5,6 +5,16 @@ const { connection } = require('./database');
 // Create Express app
 const app = express();
 
+app.use((req, res, next) => {
+ // Allow all origins
+ res.setHeader('Access-Control-Allow-Origin', '*');
+ // Allow specific HTTP methods
+ res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+ // Allow specific headers
+ res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+ next();
+});
+
 // Define routes and other middleware as needed
 // Example route
 app.get('/', async (req, res) => {
