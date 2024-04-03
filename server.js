@@ -8,9 +8,15 @@ const app = express();
 // Define routes and other middleware as needed
 // Example route
 app.get('/', async (req, res) => {
+ const msg = "Hello, world!";
+ res.json(msg);
+});
+
+app.get('/connect', async (req, res) => {
  const connetionState = await connection()
  res.send(connetionState);
 });
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
