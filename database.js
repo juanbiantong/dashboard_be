@@ -16,7 +16,7 @@ async function connection() {
   if (err) {
    console.log('Error connecting to the database:', err);
   } else {
-   return ('Connected to the database at:', res.rows[0].now);
+   console.log('Connected to the database at:', res.rows[0].now);
   }
 
  });

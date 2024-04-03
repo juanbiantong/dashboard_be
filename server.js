@@ -24,12 +24,13 @@ app.get('/', async (req, res) => {
 
 app.get('/connect', async (req, res) => {
  const connetionState = await connection()
+ console.log(connetionState, "Connect");
  res.send(connetionState);
 });
 
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3009;
 app.listen(PORT, () => {
  console.log(`Server is running on port http://localhost:${PORT}`);
 });
